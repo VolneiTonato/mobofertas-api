@@ -1,0 +1,11 @@
+node_modules
+.env.development
+.env
+bin
+dist
+tmp
+yarn-error.log
+yarn.lock
+docker/build
+logs
+public

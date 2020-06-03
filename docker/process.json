@@ -1,0 +1,41 @@
+{
+    "apps": [
+      {
+        "name": "api-auth",
+        "script": "./app-auth.js",
+        "ignore_watch":["node_modules","public"],
+        "error_file":"/dev/null",
+        "env":{
+          "NODE_ENV":"production"
+        }
+      },
+      {
+        "name": "api-static",
+        "script": "./app-static.js",
+        "ignore_watch":["node_modules","src"],
+        "error_file":"/dev/null",
+        "env":{
+          "NODE_ENV":"production"
+        }
+      },
+      {
+        "name": "api-cadastro",
+        "script": "./app-cadastro.js",
+        "ignore_watch":["node_modules","public"],
+        "error_file":"/dev/null",
+        "env":{
+          "NODE_ENV":"production"
+        }
+      },
+      {
+        "name": "api-moboferts",
+        "script": "./app.js",
+        "ignore_watch":["node_modules","public"],
+        "error_file":"/dev/null",
+        "env":{
+          "NODE_ENV":"production"
+        }
+      }
+  
+    ]
+  }
