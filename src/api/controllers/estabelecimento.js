@@ -1,10 +1,8 @@
 import express from 'express'
 import paginate from '../../midleware/paginator'
 import EstabelecimentoRepository from '../../models/repositories/estabelecimento'
-import CupomNFCRepository from '../../models/repositories/cupomNFCe'
 import ValidationMidleware, {QuerySearchValidation, PageNumberValidation} from '../../midleware/validation'
 import {query} from 'express-validator'
-import { BrowserNavigate } from '../../services/selenium'
 
 const router = express.Router()
 

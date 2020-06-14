@@ -68,16 +68,14 @@ router.post('/import-planilha', multer(multerConfigProdutos).single('file'), (re
                 if (Array.isArray(produtos)) {
                     for (let produto of produtos) {
                         try {
-
-                            console.log('chegou aqui')
-
-                            
                             
                             await new PrecoRepository().saveByImportacao(produto, idLoja)
 
                             PromiseHelper.sleep(100)
 
+
                         } catch (err) {
+                            console.log(err)
                             produtosComErro.push({ produto, err })
                         }
                     }

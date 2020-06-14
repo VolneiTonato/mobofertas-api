@@ -79,16 +79,17 @@ export default class PrecoRepository extends MasterRepository {
                 }))
 
 
-                let date = new Date(moment(new Date().setDate(new Date().getDate() + 2)))
+                let date = moment(new Date(moment(new Date().setDate(new Date().getDate() + 2)))).format('YYYY-MM-DD')
 
 
                 let data = {
                     precoAnterior: PRECO_ANTERIOR,
                     precoAtual: PRECO,
                     imagem: IMAGEM,
-                    dataValidade: DATA_FIM && moment(new Date(DATA_FIM)).isValid() ? new Date(DATA_FIM) : date,
+                    dataValidade: DATA_FIM && moment(new Date(DATA_FIM)).isValid() ? moment(new Date(DATA_FIM)).format('YYYY-MM-DD') : date,
                     status: STATUS == 'ATIVO'
                 }
+                
                 
 
                 if (precoExists?._id) {
@@ -102,7 +103,6 @@ export default class PrecoRepository extends MasterRepository {
                     data.ean = EAN
 
                     let schema = new PrecoSchema(data)
-
 
                     super.validate(schema)
 

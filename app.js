@@ -69,7 +69,7 @@ server.on('listening', () => {
 })
 
 server.on('error', (err) => {
-  log.info(`Server api error`)
+  log.info(`Server api error ${String(err)}`)
 })
 
 

@@ -16,8 +16,6 @@ router.get('/list/:owner', ValidationMidleware([
 
         const { owner } = req.params
 
-        console.log(owner)
-
         const {q}  = req.query
 
         const query = {
@@ -41,8 +39,6 @@ router.get('/list/:owner', ValidationMidleware([
         })
 
         const pageCount = paginate.calculate(count, req.query.limit)
-
-        console.log(count)
 
         res.send({ response, count, page: req.query.page, pageNext: paginate.hasNextPages(req)(pageCount) })
 

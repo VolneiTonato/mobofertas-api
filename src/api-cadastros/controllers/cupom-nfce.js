@@ -22,7 +22,7 @@ router.post('/save', ValidationMidleware([
             link: linkNfce
         })
 
-        new CupomNFCEService(linkNfce, req.user.id, dataValidade)
+        await new CupomNFCEService(linkNfce, req.user.id, dataValidade)
             .then(ok => req.app.emit('emit', 'NF importada com sucesso!'))
             .catch(err => req.app.emit('emit', err))
 

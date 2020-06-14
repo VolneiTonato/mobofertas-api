@@ -81,7 +81,7 @@ PrecoSchema.pre('update', async function (next) {
 
 PrecoSchema.pre('save', async function (next) {
     this.estabelecimento = Types.ObjectId(this.estabelecimento)
-    validateDataValidade(PrecoSchema)
+    
     next()
 })
 
